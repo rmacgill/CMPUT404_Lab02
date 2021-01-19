@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import socket, sys, time
 
+# some constants to make this easier
 LOCAL_HOST = ""
 LOCAL_PORT = 8013
 
@@ -44,7 +45,7 @@ def main():
       s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
       # bind the socket to our specified address
-      s.bind((HOST, PORT))
+      s.bind((LOCAL_HOST, LOCAL_PORT))
 
       # set socket to listen mode so that it can accept connections
       # (argument is how many pending connections to sit on before refusing new ones)
