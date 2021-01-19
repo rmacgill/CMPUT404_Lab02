@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket, sys, time
+import socket, sys
 from multiprocessing import Process
 
 # some constants to make this easier
@@ -42,10 +42,6 @@ def send_data(serversocket, payload):
 def handle_conn(conn):
    # collect sent data up to our BUFFER_SIZE
    payload = conn.recv(BUFFER_SIZE)
-
-   # wait before sending response and looping again
-   time.sleep(0.5)
-
    remote_s = create_tcp_socket();
    remote_ip = get_remote_ip(REMOTE_HOST)
    remote_s.connect((remote_ip, REMOTE_PORT))
