@@ -33,7 +33,7 @@ def get_remote_ip(host):
 # Sends a payload using the given socket (assumes connection is established)
 def send_data(serversocket, payload):
    try:
-      serversocket.sendall(payload.encode())
+      serversocket.sendall(payload)
    except socket.error:
       print("Send failed. Exiting.")
       sys.exit()
@@ -72,8 +72,8 @@ def main():
          # full_data is forced to be the bytes type (empty)
          full_data = b""
          while True:
-            # gather up to buffer_size data
-            data = s.recv(buffer_size)
+            # gather up to BUFFER_SIZE data
+            data = remote_s.recv(BUFFER_SIZE)
             # when we have no more data to collect, break out of the loop
             if not data:
                break
