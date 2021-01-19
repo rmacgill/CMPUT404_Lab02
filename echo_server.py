@@ -14,7 +14,8 @@ def main():
       # bind the socket to our specified address
       s.bind((HOST, PORT))
 
-      # set socket to listen mode (argument is how long to listen)
+      # set socket to listen mode so that it can accept connections
+      # (argument is how many pending connections to sit on before refusing new ones)
       s.listen(2)
 
       # loop forever until program is shut down
