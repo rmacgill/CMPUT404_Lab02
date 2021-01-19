@@ -31,3 +31,6 @@ def main():
          conn.sendall(full_data)
          # close the connection
          conn.close()
+
+if __name__ == "__main__":
+   main()
